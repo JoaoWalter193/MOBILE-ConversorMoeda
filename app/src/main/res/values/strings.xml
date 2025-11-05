@@ -2,7 +2,7 @@
     <string name="app_name">ConversorDeMoedas</string>
     <string-array name="ChicoMoedas">
         <item>Real R$</item>
-        <item>Dólar U$</item>
+        <item>Dólar U$D</item>
         <item>Bitcoin BTC</item>
     </string-array>
 </resources>

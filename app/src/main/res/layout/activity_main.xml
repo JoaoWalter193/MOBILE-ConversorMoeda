@@ -5,15 +5,130 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#1B1B1B"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="20dp">
+
+    <View
+        android:id="@+id/retanguloDecorativo"
+        android:layout_width="374dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/retangulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/retanguloDecorativo2"
+        android:layout_width="374dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="252dp"
+        android:background="@drawable/retangulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="30dp"
+        android:background="@android:color/transparent"
+        android:onClick="irConverter"
+        android:src="@drawable/arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="273dp"
+        android:layout_height="147dp"
+        app:layout_constraintBottom_toBottomOf="@+id/retanguloDecorativo2"
+        app:layout_constraintEnd_toEndOf="@+id/retanguloDecorativo2"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="@+id/retanguloDecorativo2"
+        app:layout_constraintTop_toTopOf="@+id/retanguloDecorativo2"
+        app:layout_constraintVertical_bias="0.808"
+        app:srcCompat="@drawable/dolar" />
+
+    <View
+        android:id="@+id/retanguloDecorativo3"
+        android:layout_width="374dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="492dp"
+        android:background="@drawable/retangulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="343dp"
+        android:layout_height="128dp"
+        app:layout_constraintBottom_toBottomOf="@+id/retanguloDecorativo3"
+        app:layout_constraintEnd_toEndOf="@+id/retanguloDecorativo3"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/retanguloDecorativo3"
+        app:layout_constraintTop_toTopOf="@+id/retanguloDecorativo3"
+        app:layout_constraintVertical_bias="0.641"
+        app:srcCompat="@drawable/bitcoin" />
+
+    <TextView
+        android:id="@+id/textViewBitcoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="504dp"
+        android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button6"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="30dp"
+        android:background="@android:color/transparent"
+        android:onClick="irConverter"
+        android:src="@drawable/arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewReal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
         android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button4"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="30dp"
+        android:background="@android:color/transparent"
+        android:onClick="irConverter"
+        android:src="@drawable/arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,30 +136,25 @@
         android:id="@+id/textViewDolar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="268dp"
         android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewBitcoin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="236dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="267dp"
+        android:layout_height="144dp"
+        app:layout_constraintBottom_toBottomOf="@+id/retanguloDecorativo"
+        app:layout_constraintEnd_toEndOf="@+id/retanguloDecorativo"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/retanguloDecorativo"
+        app:layout_constraintTop_toTopOf="@+id/retanguloDecorativo"
+        app:layout_constraintVertical_bias="0.842"
+        app:srcCompat="@drawable/real" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="544dp"
-        android:onClick="irConverter"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

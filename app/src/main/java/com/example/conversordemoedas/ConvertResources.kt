@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Spinner
@@ -38,6 +39,21 @@ class ConvertResources : AppCompatActivity() {
             insets
         }
 
+        val spinnerEntrada = findViewById<Spinner>(R.id.spinnerMoedaEntrada)
+        val spinnerSaida = findViewById<Spinner>(R.id.spinnerMoedaSaida)
+
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.ChicoMoedas,
+            R.layout.spinner_item
+        )
+
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+
+        spinnerEntrada.adapter = adapter
+        spinnerSaida.adapter = adapter
+
+
         progressBarRequest = findViewById(R.id.progressBarRequest)
         valorMostrar = findViewById(R.id.editTextNumber2Mostrar)
 
@@ -67,7 +83,7 @@ class ConvertResources : AppCompatActivity() {
                 "Real R$" -> {
                     if (valorParaConverter <= Valores.valorReal) saldoSuficiente = true
                 }
-                "Dólar U$" -> {
+                "Dólar U\$D" -> {
                     if (valorParaConverter <= Valores.valorDOlar) saldoSuficiente = true
                 }
                 "Bitcoin BTC" -> {
@@ -75,7 +91,7 @@ class ConvertResources : AppCompatActivity() {
                 }
             }
             if (saldoSuficiente) {
-                if (selecionadoEntrada == "Real R$" && selecionadoSaida == "Dólar U$") {
+                if (selecionadoEntrada == "Real R$" && selecionadoSaida == "Dólar U\$D") {
                     lifecycleScope.launch {
                         try {
                             showProgressBar()
@@ -90,7 +106,7 @@ class ConvertResources : AppCompatActivity() {
                             Valores.valorReal = Valores.valorReal - valorParaConverter
                             Valores.valorDOlar = Valores.valorDOlar + valorConvertido
 
-                            valorMostrar.setText(valorConvertido.toString())
+                            valorMostrar.setText("%.2f".format(valorConvertido))
                             valorConverter.setText("")
                         } catch (e: Exception) {
                             Log.e("ConvertResource", "Erro ao buscar conversão", e)
@@ -112,14 +128,14 @@ class ConvertResources : AppCompatActivity() {
                             Valores.valorReal = Valores.valorReal - valorParaConverter
                             Valores.valorBtc = Valores.valorBtc + valorConvertido
 
-                            valorMostrar.setText(valorConvertido.toString())
+                            valorMostrar.setText("%.4f".format(valorConvertido))
                             valorConverter.setText("")
                         } catch (e: Exception) {
                             Log.e("ConvertResource", "Erro ao buscar conversão", e)
                         }
                     } // FALTANDO ESTE COLCHETE
                 }
-                if (selecionadoEntrada == "Dólar U$" && selecionadoSaida == "Real R$") {
+                if (selecionadoEntrada == "Dólar U\$D" && selecionadoSaida == "Real R$") {
                     lifecycleScope.launch {
                         try {
                             showProgressBar()
@@ -138,7 +154,7 @@ class ConvertResources : AppCompatActivity() {
 
 
 
-                            valorMostrar.setText(valorConvertido.toString())
+                            valorMostrar.setText("%.2f".format(valorConvertido))
                             valorConverter.setText("")
 
                         } catch (e: Exception) {
@@ -147,7 +163,7 @@ class ConvertResources : AppCompatActivity() {
                         }
                     } // FALTANDO ESTE COLCHETE
                 }
-                if (selecionadoEntrada == "Dólar U$" && selecionadoSaida == "Bitcoin BTC") {
+                if (selecionadoEntrada == "Dólar U\$D" && selecionadoSaida == "Bitcoin BTC") {
                     lifecycleScope.launch {
                         try {
                             showProgressBar()
@@ -162,7 +178,7 @@ class ConvertResources : AppCompatActivity() {
                             Valores.valorDOlar = Valores.valorDOlar - valorParaConverter
                             Valores.valorBtc = Valores.valorBtc + valorConvertido
 
-                            valorMostrar.setText(valorConvertido.toString())
+                            valorMostrar.setText("%.4f".format(valorConvertido))
                             valorConverter.setText("")
                         } catch (e: Exception) {
                             Log.e("ConvertResource", "Erro ao buscar conversão", e)
@@ -184,14 +200,14 @@ class ConvertResources : AppCompatActivity() {
                             Valores.valorBtc = Valores.valorBtc - valorParaConverter
                             Valores.valorReal = Valores.valorReal + valorConvertido
 
-                            valorMostrar.setText(valorConvertido.toString())
+                            valorMostrar.setText("%.2f".format(valorConvertido))
                             valorConverter.setText("")
                         } catch (e: Exception) {
                             Log.e("ConvertResource", "Erro ao buscar conversão", e)
                         }
                     }
                 }
-                if (selecionadoEntrada == "Bitcoin BTC" && selecionadoSaida == "Dólar U$") {
+                if (selecionadoEntrada == "Bitcoin BTC" && selecionadoSaida == "Dólar U\$D") {
                     lifecycleScope.launch {
                         try {
                             showProgressBar()
@@ -206,7 +222,7 @@ class ConvertResources : AppCompatActivity() {
                             Valores.valorBtc = Valores.valorBtc - valorParaConverter
                             Valores.valorDOlar = Valores.valorDOlar + valorConvertido
 
-                            valorMostrar.setText(valorConvertido.toString())
+                            valorMostrar.setText("%.2f".format(valorConvertido))
                             valorConverter.setText("")
                         } catch (e: Exception) {
                             Log.e("ConvertResource", "Erro ao buscar conversão", e)

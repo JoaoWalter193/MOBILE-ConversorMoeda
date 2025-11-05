@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
         textViewReal = findViewById(R.id.textViewReal)
         textViewDolar = findViewById(R.id.textViewDolar)
         textViewBtc = findViewById(R.id.textViewBitcoin)
-        textViewReal.setText("%.2f".format(Valores.valorReal))
-        textViewDolar.setText("%.2f".format(Valores.valorDOlar))
-        textViewBtc.setText("%.4f".format(Valores.valorBtc))
+        textViewReal.setText("R$ %.2f".format(Valores.valorReal))
+        textViewDolar.setText("U\$D %.2f".format(Valores.valorDOlar))
+        textViewBtc.setText("BTC %.4f".format(Valores.valorBtc))
 
     }
 
